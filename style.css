@@ -1,3 +1,4 @@
+
 ul {
     list-style-type: none;
     margin: 0;
@@ -18,12 +19,8 @@ li a:hover {
     color: white;
 }
 
-div.static {
-    position: static;
-    border: 3px solid #73AD21;
-}
 h1 {
-    color:rgb(128, 27, 27);
+    color:rgb(49, 3, 3);
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;
 }
@@ -65,4 +62,86 @@ p{
     display: flex;
     display: inline-block;
     padding: 10px;
+}
+
+div{
+    margin-left: 300px;
+}
+
+#albuns article{
+    display: flex;
+    display: inline-block;
+    padding: 10px;
+    text-align: center;
+}
+
+#maisouvidas article{
+    display: flex;
+    display: inline-block;
+    padding: 10px;
+    text-align: center;
+}
+
+#maiscurtidas article{
+    display: flex;
+    display: inline-block;
+    padding: 10px;
+    text-align: center;
+}
+
+body h1{
+    text-align: center;
+    height: 35px;
+    width: 100%;
+    background-color: rgb(109, 78, 78);
+}
+
+#artista img{
+    float: center;
+    padding: 30px;
+}
+
+.taylorswift{
+    transition: all 0.5s;
+    cursor: pointer;
+}
+.taylorswift:hover{
+    -webkit-filter: drop-shadow(15px 10px 5px rgba(0,0,0,.5));
+    filter: drop-shadow(15px 10px 5px rgba(0,0,0,.5));
+}
+
+.global{
+    transition: all 0.5s;
+    cursor: pointer;
+}
+.global:hover{
+    -webkit-filter: drop-shadow(15px 10px 5px rgba(0,0,0,.5));
+    filter: drop-shadow(15px 10px 5px rgba(0,0,0,.5));
+}
+
+.global1{
+    transition: all 0.5s;
+    cursor: pointer;
+}
+.global1:hover{
+    -webkit-filter: drop-shadow(15px 10px 5px rgba(0,0,0,.5));
+    filter: drop-shadow(15px 10px 5px rgba(0,0,0,.5));
+}
+
+.global2{
+    transition: all 0.5s;
+    cursor: pointer;
+}
+.global2:hover{
+    -webkit-filter: drop-shadow(15px 10px 5px rgba(0,0,0,.5));
+    filter: drop-shadow(15px 10px 5px rgba(0,0,0,.5));
+}
+
+.global3{
+    transition: all 0.5s;
+    cursor: pointer;
+}
+.global3:hover{
+    -webkit-filter: drop-shadow(15px 10px 5px rgba(0,0,0,.5));
+    filter: drop-shadow(15px 10px 5px rgba(0,0,0,.5));
 }
