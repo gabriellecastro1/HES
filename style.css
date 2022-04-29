@@ -19,6 +19,14 @@ li a:hover {
     color: white;
 }
 
+li ul {
+    display: none;
+}
+
+li:hover > ul {
+    display: block;
+}
+
 h1 {
     color:rgb(49, 3, 3);
     text-align: center;
@@ -75,6 +83,16 @@ div{
     text-align: center;
 }
 
+#albuns section{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#favoritas{
+    display: flex;
+    flex-wrap: wrap;
+}
+
 #maisouvidas article{
     display: flex;
     display: inline-block;
@@ -83,6 +101,13 @@ div{
 }
 
 #maiscurtidas article{
+    display: flex;
+    display: inline-block;
+    padding: 10px;
+    text-align: center;
+}
+
+#detalhes article{
     display: flex;
     display: inline-block;
     padding: 10px;
@@ -146,6 +171,13 @@ body h1{
     filter: drop-shadow(15px 10px 5px rgba(0,0,0,.5));
 }
 
-div button{
-    background-color: rgb(109, 78, 78);
+div input{
+    background-color: rgba(109, 78, 78, 0.692);
 }
+
+footer{
+    margin: 15px;
+    padding: 15px;
+    text-align: center;
+}
+

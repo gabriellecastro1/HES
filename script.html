@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<body>
+    <script>
+    function cadastrar(){
+        alert('cadastrar')
+        let livro = prompt('nome do livro');
+        let autor = prompt('nome do autor');
+        livros.push(livro);
+        autor.push(autor)
+    }
+    function listar(){
+        alert('listar')
+        let mensagem = '';
+        for (let livro of livros){
+            mensagem += livro + '\n'
+        }
+        alert(mensagem)
+    }
+    function sair(){
+        alert('sair')
+    }
+        let opcao = 0;
+        while (opcao != 3){
+            alert('1-Cadastrar\n 2-Lista\n 3-Sair')
+            opcao = prompt('')
+                switch (opcao){
+                    case '1':
+                        alert('Cadastrar')
+                        break
+                    case '2':
+                        alert('Listar')
+                        break
+                    case '3':
+                        alert('Sair')
+                        break
+                }
+        }
+    </script>
+</body>
