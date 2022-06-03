@@ -1,39 +1,120 @@
-<!DOCTYPE html>
-<body>
-    <script>
-    function cadastrar(){
-        alert('cadastrar')
-        let livro = prompt('nome do livro');
-        let autor = prompt('nome do autor');
-        livros.push(livro);
-        autor.push(autor)
+<script>
+    // Listas
+    let NomeDaMusica = [];
+    let NomeDoArtista = [];
+    // Funções
+    function cadastrar_NomeDaMusica(lista_NomeDaMusica) {
+        let musica = prompt('Nome da Musica:');
+        let NomeDaMusica = {
+            musica: musica
+        }
+        lista_NomeDaMusica.push(NomeDaMusica);
     }
-    function listar(){
-        alert('listar')
+    function cadastrar_NomeDoArtista(lista_NomeDoArtista) {
+        let artista = prompt('Nome do Artista:');
+        let NomeDoArtista = {
+            artista: artista
+        }
+        lista_NomeDoArtista.push(NomeDoArtista)
+    }
+    function listar_NomeDaMusica(lista_NomeDaMusica) {
         let mensagem = '';
-        for (let livro of livros){
-            mensagem += livro + '\n'
+        let id = 0;
+        for (let NomeDaMusica of lista_NomeDaMusica) {
+            mensagem += id + '' + 'Nome da Música: \n' +  NomeDaMusica.musica + '-\n' + 'Nome do Artista: \n'+ NomeDoArtista.artista + '\n';
+            id++;
         }
         alert(mensagem)
     }
-    function sair(){
-        alert('sair')
-    }
-        let opcao = 0;
-        while (opcao != 3){
-            alert('1-Cadastrar\n 2-Lista\n 3-Sair')
-            opcao = prompt('')
-                switch (opcao){
-                    case '1':
-                        alert('Cadastrar')
-                        break
-                    case '2':
-                        alert('Listar')
-                        break
-                    case '3':
-                        alert('Sair')
-                        break
-                }
+    function listar_NomeDoArtista(lista_NomeDoArtista) {
+        let mensagem = '';
+        let id = 0;
+        for (let NomeDoArtista of lista_NomeDoArtista) {
+            mensagem += id + '' + 'Nome da Música: \n' + NomeDaMusica.musica + '-\n' + 'Nome do Artista: \n' + NomeDoArtista.artista + ' - ' + '\n';
+            id++;
         }
-    </script>
-</body>
+        alert(mensagem)
+    }
+    function editar_NomeDaMusica(lista_NomeDaMusica) {
+        listar_NomeDaMusica(lista_NomeDaMusica)
+        let id = parseInt(prompt('Qual id deseja editar?'))
+        let variavel = lista_NomeDaMusica[id];
+        let nome= prompt(`Musica: [${variavel.musica}]`); 
+        if (nome== '') {
+            nome= variavel.nome;   
+        }
+        let artista = prompt(`Artista: [${variavel.artista}]`); 
+        if (artista == '') {
+            artista = variavel.artista;
+        }
+        let musicaNovo= {
+            nome: nome,
+            artista: artista
+        };
+        lista_NomeDaMusica[id] = musicaNovo;
+    }
+    function editar_NomeDoArtista(lista_NomeDoArtista) {
+        listar_NomeDoArtista(lista_NomeDoArtista)
+        let id = parseInt(prompt('Qual id deseja editar?'))
+        let variavel = lista_NomeDoArtista[id];
+        let nome= prompt(`Artista: [${variavel.artista}]`); 
+        if (nome== '') {
+            nome= variavel.nome;   
+        }
+        let musica= prompt(`Musica: [${variavel.musica}]`); 
+        if (musica== '') {
+            musica= variavel.musica;
+        }
+        let artistaNovo= {
+            nome: nome,
+            musica:musica
+        };
+        listar_NomeDoArtista[id] = artistaNovo;
+    }
+
+    function apagar_NomeDaMusica(lista_NomeDaMusica) {
+        listar_NomeDaMusica(lista_NomeDaMusica);
+        let id = parseInt(prompt('Qual ID deseja apagar?'));
+        lista_NomeDaMusica.splice(id, 1);
+    }
+    function apagar_NomeDoArtista(lista_NomeDoArtista) {
+        listar_NomeDoArtista(lista_NomeDoArtista);
+        let id = parseInt(prompt('Qual ID deseja apagar?'))
+        lista_NomeDoArtista.splice(id, 1)
+    }
+    // Programa Principal
+    loop:
+    while (true) {
+        alert('1 Cadastrar Musicas\n2 Cadastrar Artista\n3 Listar Musicas\n4 Listar Artistas\n5 Editar Musicas\n6 Editar Artista\n7 Apagar Musica\n8 Apagar Artista \n9 SAIR');
+        opcao = prompt('');
+        switch (opcao) {
+            case '1':
+                cadastrar_NomeDaMusica(NomeDaMusica)
+                break
+            case '2':
+                cadastrar_NomeDoArtista(NomeDoArtista)
+                break
+            case '3':
+                listar_NomeDaMusica(NomeDaMusica)
+                break
+            case '4':
+                listar_NomeDoArtista(NomeDoArtista)
+                break
+            case '5':
+                editar_NomeDaMusica(NomeDaMusica)
+                break
+            case '6':
+                editar_NomeDoArtista(NomeDoArtista)
+                break
+            case '7':
+                apagar_NomeDaMusica(NomeDaMusica)
+                break
+            case '8':
+                apagar_NomeDoArtista(NomeDoArtista)
+                break
+            case '9':
+                alert('SAIR')
+                break loop;
+        }
+    }
+</script>
